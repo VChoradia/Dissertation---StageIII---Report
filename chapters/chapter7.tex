@@ -1,16 +1,20 @@
 \chapter{Results and Discussions}
 
-This chapter presents a comprehensive analysis of the results obtained from the development and implementation of the VitalMonitor. The primary objective was to address existing gaps in healthcare monitoring of HCPs by using IoT and IoTaaS platform to facilitate remote, non-intrusive, scalable, and versatile healthcare solution for HCPs. The findings are evaluated against the project's original aims outlined in Chapter Three, Requirements and Analysis. The final product's demonstration can be seen \textbf{here - PUT LINK HERE}.
+This chapter presents a comprehensive analysis of the results obtained from the development and implementation of the VitalMonitor. The primary objective was to address existing gaps in healthcare monitoring of HCPs by using IoT and IoTaaS platform to facilitate remote and non-intrusive healthcare solution for HCPs. The findings are evaluated against the project's original aims outlined in Chapter Three, Requirements and Analysis. The final product's demonstration video can be seen \textbf{here - PUT LINK HERE}.
 
 \section{Revisited Requirements}
-The project managed to fufill most of its goal - I created a prototype of Smart Patch but was unable to create a full product due to multiple constraints. The prototype is able to get heart beat and body temperature and send it in real-time to the dashboard. Along with it, it sends message to the emergency contact number using the Twilio API and gets connected to the system.  To make a full physical product, electrical engineer would be required but skills involving CAD to 3D print the product. Except for the product, the platform was ready and fully functional. Web Dashboard was made fully for the organization's admins. They can do bunch of stuffs like Add New Device, Add New User and Assign device to user etc which were all the requirements for the project. \\
+This project successfully met the majority of its objectives. A prototype of Smart Patch was created. However, the creation of a fully realized product was impeded by several constraints. The prototype is able to get heart rate and body temperature and transmit it in real-time to the dashboard. Additionally, it features functionality to send alerts to emergency contacts via the Twilio API. While the prototype demonstrates substantial capabilities, the transition to a full-scale product would necessitate expertise in electrical engineering and proficiency in CAD for 3D printing. \\
 
-During the project's lifecycle, several requirements were revisited and refined to better align with the evolving technological landscape and user feedback. This adaptive approach was pivotal in addressing unforeseen challenges and leveraging new opportunities as they arose. For instance, the initial plan to use the LM35 temperature sensor was discarded in favor of the DS18B20, a decision driven by the latter's digital output capabilities which simplify data integration and improve measurement accuracy.
+\noindent Aside from the Smart Patch, the IT infrastructure and web dashbaord of VitalMonitor has been fully implemented and is operational. The web dashboard is designed specifically for organizational administrators, offers comprehensive functionalities including the ability to add and assign devices to users, among other tasks. These features fulfill all stated project requirements. \\
+
+\noindent During the project's lifecycle, several requirements were revisited and refined to better align with the evolving technological landscape and user feedback. This adaptive approach was pivotal in addressing unforeseen challenges and leveraging new opportunities as they arose. A notable adjustment was the substitution of the LM35 temperature sensor with the DS18B20 sensor. This change was motivated by the digital output capabilities of the DS18B20, which facilitate easier data integration and enhance the accuracy of measurements.
 
 // ADD THE DIAGRAM - AFTER UPDATING USER STORIES
 
 \section{Project Cost}
-The financial overview of the project is detailed below, providing transparency regarding the allocation and utilization of resources:
+The funding required to design, implement, and test the entire project was substantial and supported by the Department of Computer Science. Monitoring the expenses associated with the prototype provides insights into potential costs of a fully developed product. Minimizing these costs is critical for promoting adoption by healthcare organizations, potentially alleviating their financial constraints. \\
+
+\noindent A detailed overview of the project's expenditures is provided below to ensure transparency in the allocation and utilization of resources:
 
 \begin{table}[h!]
     \centering
@@ -29,38 +33,28 @@ The financial overview of the project is detailed below, providing transparency 
     \label{tab:project-cost}
 \end{table}
 
-Other Costs:
-Used \$50 Google Cloud's free credits of \$300 towards development of the project.
-Used free tier of AdafruitIO (restricted to 2 Dashboards and 10 feeds which were enough for this stage of development). For Twilio trial, \$12 were given from which I bought a UK phone number to sent texts from and each message - costed \$0.0420. 
+Additional Costs:
 
+\begin{itemize}
+    \item Utilization of \$55 from Google Cloud's \$300 free credits for development purposes. Cost per day to run the database on Google Cloud with current configurations are \$0.4/day.
+    \item Employment of the AdafruitIO free tier, which includes access to 2 dashboards and 10 feeds — sufficient for this project phase.
+    \item Allocation of \$12 from a Twilio trial credit to purchase a UK phone number, with each text message incurring a cost of \$0.0420.
+\end{itemize}
 
-% \section{Achievements of Project Goals}
-% \subsection{Remoteness}
-% The project successfully achieved the goal of remote health monitoring through the implementation of the Smart Patch, which transmits health data to the web dashboard accessible by organization admins. This system was tested in various scenarios to simulate real-world applications, demonstrating its capability to monitor multiple healthcare providers (HCPs) concurrently. 
-
-% \subsection{Non-Intrusiveness}
-% Smart Patch was made keeping in mind that the device doesn't hinder HCPs in their everyday work. Smart Patch's prototype was made in this iteration of the project. The prototype was specifically designed and developed using sensors which serve this theme. The final device will be made in such a way that it sits behind the ear - where the pulse sensor will be sticked to the ear lobe and the temperature sensor right behind the ear. This prototype can be further made more smaller in size using more efficient chips which are streamlined only for Smart Patch unlike ESP32S3. 
-
-% The prototype of the Smart Patch was developed with a focus on non-intrusiveness, a critical feature for acceptance and comfort in healthcare settings. The device's design, positioning behind the ear, and the choice of sensors were dictated by ergonomic considerations and the physiological requirements for accurate data collection. This iteration didn't focus on making the final version of the product. And therefore would involve further work on 3D Printing and product optimisation.
-
-% \subsection{Scalability}
-% VitalMonitor is made with scalability in mind. Many organizations can register themselves to use the IoTaaS platform. And each organization can have multiple users registered. These both depends on the database access VitalMonitor has during the production stage. VitalMonitor can easily be scaled to add more sensors and functionalities like xyz to enhance the parameters used to indicate fatigue or stress level. 
-
-% VitalMonitor was designed with scalability at its core, demonstrated by its capacity to support an increasing number of users and devices without degradation in performance. Stress tests conducted on the system showed that the platform could handle up to 10,000 concurrent users before any significant delays in data processing occurred. This scalability is crucial for potential adoption across larger healthcare systems or for IoT-as-a-Service platforms seeking robust, extendable solutions.
-
-% \subsection{Versatility}
-% During the development, adding a middleware - gave path to making VitalMonitor more versatile and adaptable. Initially VitalMonitor was thought of just for a hospital which is on the same local network and all the Smart Patch will be connected directly to the dashboard. But during the development, middleware made it possible to have Smart Patches on different networks as well. And more over when in the next iteration if we choose an SoC which has sim card on it - it can get connected to its own network. And these can directly send data to middleware hosted on google cloud for eg. and the organization's admin can access the dashboard from anywhere it is needed. This extends the number of use cases this product could have - it can be used for HCPs in ambulances, natural disaster relief teams, HCPs in medical camps in a remote place, etc. This feature makes VitalMonitor so much more versatile and adapatable. 
 
 \section{VitalMonitor's IT Infrastructure}
 
-VitalMonitor is designed and implemented to be scalable and versatile.  Many organizations can register themselves to use the IoTaaS platform. And each organization can have multiple users registered. These both depends on the database access VitalMonitor has during the production stage. VitalMonitor can easily be scaled to add more sensors and functionalities like xyz to enhance the parameters used to indicate fatigue or stress level. During the development, adding a middleware - gave path to making VitalMonitor more versatile and adaptable. Initially VitalMonitor was thought of just for a hospital which is on the same local network and all the Smart Patch will be connected directly to the dashboard. But during the development, middleware made it possible to have Smart Patches on different networks as well. And more over when in the next iteration if we choose an SoC which has sim card on it - it can get connected to its own network. And these can directly send data to middleware hosted on google cloud for eg. and the organization's admin can access the dashboard from anywhere it is needed. This extends the number of use cases this product could have - it can be used for HCPs in ambulances, natural disaster relief teams, HCPs in medical camps in a remote place, etc. This feature makes VitalMonitor so much more versatile and adapatable.  
+VitalMonitor has been designed and implemented with scalability and versatility as foundational principles. The IoTaaS platform enables registration for multiple organizations, each of which can support numerous users. VitalMonitor is engineered to easily incorporate additional sensors and functionalities, enhancing its capacity to monitor parameters indicative of fatigue or stress levels. \\ \\
+A significant development was the introduction of middleware, which expanded the adaptability of VitalMonitor. Originally conceived to operate within a single hospital's local network, the middleware now facilitates the connection of Smart Patches across diverse network environments. In future iterations, incorporating a System on Chip (SoC) with an integrated SIM card could enable autonomous network connectivity, allowing data to be sent directly to middleware hosted on cloud services such as Google Cloud. This feature would allow organizational administrators to access the dashboard from any location, greatly enhancing the system's utility. \\ \\
+Such flexibility extends the potential applications of the product to include healthcare providers in ambulances, natural disaster response teams, and medical camps in remote areas. This adaptability underscores the advanced capability of VitalMonitor to meet a wide range of healthcare monitoring needs, making it a highly versatile and indispensable tool in diverse medical contexts.
+
+% VitalMonitor is designed and implemented to be scalable and versatile.  Many organizations can register themselves to use the IoTaaS platform. And each organization can have multiple users registered. These both depends on the database access VitalMonitor has during the production stage. VitalMonitor can easily be scaled to add more sensors and functionalities like xyz to enhance the parameters used to indicate fatigue or stress level. During the development, adding a middleware - gave path to making VitalMonitor more versatile and adaptable. Initially VitalMonitor was thought of just for a hospital which is on the same local network and all the Smart Patch will be connected directly to the dashboard. But during the development, middleware made it possible to have Smart Patches on different networks as well. And more over when in the next iteration if we choose an SoC which has sim card on it - it can get connected to its own network. And these can directly send data to middleware hosted on google cloud for eg. and the organization's admin can access the dashboard from anywhere it is needed. This extends the number of use cases this product could have - it can be used for HCPs in ambulances, natural disaster relief teams, HCPs in medical camps in a remote place, etc. This feature makes VitalMonitor so much more versatile and adapatable.  
 
 
 
 \section{Prototype of Smart Patch}
-Smart Patch was implemented keeping in mind its primary objective of being the device that doesn't hinder HCPs in their everyday work. Smart Patch's prototype was made in this iteration of the project. The prototype was specifically designed and developed using sensors which serve this theme. It is able to detect vitals of HCP in the least intrusive and most remote way. It runs its own mini asynchronous web server to transmit the data to middleware server. A switch is included in the design, to make sure that the wearer is in control of their data. Only when the wearer (here HCP) presses the button and red LED turns on - only then the data is even measured. 
-
-The device's design, positioning behind the ear, and the choice of sensors were dictated by ergonomic considerations and the physiological requirements for accurate data collection. This iteration didn't focus on making the final version of the product. And therefore would involve further work on 3D Printing and product optimisation. This stage didn't involved developing a final product due to time constraints.
+Smart Patch was implemented keeping in mind its primary objective of being the device that doesn't hinder HCPs in their everyday work. Smart Patch's prototype was made in this iteration of the project. The prototype was specifically designed and developed using sensors which serve this theme. It is able to detect vitals of HCP in the least intrusive and most remote way. It runs its own mini asynchronous web server to transmit the data to middleware server. Additionally, a manual switch is incorporated, empowering the wearer to control when data is recorded. Only when the wearer (here HCP) presses the switch and red LED turns on - only then the data is measured. \\ \\
+The ergonomic design of the device, strategically positioned behind the ear, and the selection of sensors were dictated by the need for comfort and the physiological requisites for precise data collection. This stage of the project did not focus on finalizing the product design; thus, further development involving 3D printing and product optimization is required. Time constraints in this phase prevented the advancement to a finalized product.
 
 
 \begin{figure}[h!]
@@ -83,33 +77,31 @@ The device's design, positioning behind the ear, and the choice of sensors were 
 \section{Limitations and Issues Encountered}
 
 \subsection{Trade off between Sensor Accuracy and Non-Intrusiveness}
-When choosing the right sensors which sits in the requirements - not a lot of options exists out there. For a reason, Non-intrusive devices were not used in the healthcare industry. When things become non-intrusive or less intrusive - They lose accuracy. And when dealing with patients or actively monitoring their vitals, if the accuracy and precision of sensor data are low, this can very easily lead to wrong diagnosis. Doctors depends on these vitals and information to take steps. And therefore only the sensors which provides most accurate data are used. And therefore, healthtech companies out there don't really care for non-intrusivity.
-
-For our case, passive monitoring is involved - there's no diagnosis is to be given. Okay actions are to be taken - like taking rest, etc for HCPs. But even though it is passive monitoring - accuracy is important. Hospitals are only going to adopt VitalMonitor if they find it is reliable. And reliability comes from accuracy. But no such sensors exists out there in market which is both non-intrusive and provide high accuracy. With software, you can only do so much to make sure it is the right data. And therefore we had to settle for such sensors. 
-
+In developing wearable devices for continuous monitoring, a significant challenge is balancing sensor accuracy with the need for non-intrusiveness, particularly for healthcare professionals (HCPs) who wear these devices during long shifts. High accuracy in sensors is crucial, as it ensures that the data collected is reliable enough to inform meaningful interventions to support HCP well-being. However, achieving this often requires more invasive technologies that may interfere with the daily activities and comfort of these professionals.\\ \\
+VitalMonitor focuses on optimizing this balance by selecting sensors that minimize intrusiveness while still providing sufficiently accurate data for passive monitoring. This approach is critical in settings where both the well-being of HCPs and operational efficiency are prioritized. Given the limited availability of sensors that strike a perfect balance between non-intrusiveness and high accuracy, the selection was guided by the goal of maintaining user comfort and system reliability. This ensures that healthcare administrators can effectively monitor and respond to the health indicators of their staff without causing discomfort or disruption to their work.
 
 
 \subsection{Converting Raw Data to Useful Data}
-DS18B20 Temperature Sensor and Pimoroni Pulse Sensor - both the sensors convert analog electrical signals to digital signals and provide health data. But during this process, a lot of noise is detected. This noise makes the data irregular and not smooth. So we cannot use data directly especially when dealing with real-time health data. various different algorithms were used to smoothen out the data and tweak it to make it as true as possible. 
 
-Some of the data is also generated using false positive. For eg., in a continuous data of 32 degree celcius of body temperature suddenly due to noise it detects 45 degrees in one reading. Now if the threshold was set to 35 and suddenly got a false positive of 45 degrees, that would just make the whole system unreliable and might cause panic.  
-
-Various different strategies were used to solve this limitation. One of the most useful ones were using Moving Average. Moving Average smooth out the data and remove any data which is found to beyond the tolerance level for the data. Below image, shows the difference made by using Moving Average. Moving Average converts any irregular data to smoother data and remove extreme values such as 0s and -127. 
+The DS18B20 Temperature Sensor and Pimoroni Pulse Sensor are integral to VitalMonitor's functionality, changing analog electrical signals into digital data for health monitoring. However, this reading process often introduces significant noise, resulting in irregular and unreliable data outputs.  Such anomalies, if unaddressed, could potentially trigger unwarranted alarms or actions based on incorrect information. This necessitates robust data processing strategies to ensure accuracy and usability. \\ \\
+A common challenge in sensor data analysis is managing these irregularities, particularly when they lead to significant deviations from expected patterns. For example, an abrupt spike in temperature readings from 32 degrees Celsius to an erroneous 45 degrees could inadvertently exceed the system’s threshold of 35 degrees, resulting in false alarms. To ensure data integrity and reliability, it is imperative to employ robust data smoothing techniques. \\ \\
+The Moving Average filter is one such technique applied within the VitalMonitor framework. By averaging data points over a defined time window, this method effectively dampens the impact of transient spikes or noise, leading to a more stable and accurate data output. This technique not only enhances the overall quality of the health monitoring data but also supports critical decision-making processes by reducing the likelihood of false alerts. Figure \ref{fig:data-sensors} provides a snapshot of data collected from the sensors in their raw form as well as data after implementing Moving Average function to it. \\
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/data.png}
+    \includegraphics[width=0.6\linewidth]{images/data.png}
     \caption{Data from sensors}
     \label{fig:data-sensors}
 \end{figure}
 
-After thorough testing and evaluation it was found that the sensors are giving data precision of \(± 15\) BPM for heart rate and \(± 0.2-0.5\) degree Celsius for temperature.
+\noindent Extensive testing and evaluation have confirmed that the adapted sensors provide a data precision of \(\pm 15\) BPM for heart rate and \(\pm 0.2-0.5\) degree Celsius for temperature. These measures ensure that VitalMonitor delivers reliable and actionable health data for healthcare professionals, enhancing the monitoring and management of their well-being.
 
 \subsection{Reliability depends on Network Bandwidth}
-All the Smart Patches are connected using WiFi. Only if the wifi bandwidth is strong, then it would make Smart Patches to upload the data in real-time. When there would be 100 Smart Patches working live at the same time, imagine the constraint it would have on the wifi network. Because of this the data sometimes lag to reach the dashboard. On testing and evaluation it was found this over-reliability on strong network.
+The effective operation of VitalMonitor’s Smart Patches heavily relies on the strength and capacity of the WiFi network to which they are connected. These devices are designed to upload data in real-time, a process that demands robust network performance to function seamlessly. With a scenario involving up to 100 Smart Patches transmitting data simultaneously, the bandwidth requirements become substantial. This substantial demand can strain the network, leading to potential data transmission delays that may impact the timeliness and reliability of data being displayed on the monitoring dashboard. \\ \\
+During extensive testing and evaluation, it was observed that the system's reliability is significantly influenced by the WiFi network's bandwidth. Insufficient bandwidth can result in lagging data updates, which may hinder the system’s ability to provide real-time insights crucial for immediate decision-making and response. This finding underscores the necessity for implementing a network infrastructure capable of supporting high data loads, especially in environments where continuous and simultaneous monitoring is critical. Efforts to enhance network configurations, possibly through dedicated channels or enhanced WiFi protocols, are essential to mitigate these issues and ensure reliable system performance.
 
 \subsection{Google Cloud}
-Google Cloud gives \$300 credits to use for our database and servers. This iteration just used it for database (MySQL) - Enterprise Cloud SQL Edition. To use the cheapest rate per day, the configurations selected is shown in Figure \ref{fig:cloud-configurations}.
+Google Cloud offers \$300 in credits for database and server usage. In this project iteration, these credits were primarily utilized for the MySQL database, specifically the Enterprise Cloud SQL Edition. The chosen configuration, as depicted in Figure \ref{fig:cloud-configurations}, was optimized for cost efficiency, with an initial setup cost of \$6 and a daily operational cost of \$0.4. While suitable for development and testing purposes, this configuration may prove inadequate for production deployment, particularly when supporting a larger user base. \\
 
 \begin{figure}[h!]
     \centering
@@ -118,28 +110,30 @@ Google Cloud gives \$300 credits to use for our database and servers. This itera
     \label{fig:cloud-configurations}
 \end{figure}
 
-These cloud database costed \$6 to initialise it. The cost per day with these configurations for this database is \$0.4. These configurations are enough for development and testing but when in actual production, these won't work and would create a lag and disrupt the real-time data flow. When in production and used by 100 HCPs and 1 dashboard for 1 hospital, these configurations should change to Enterprise Plus Cloud SQL Edition, with at least 8 vCPU, 32 GB and change storage to at least over 100 GB. This would increase when this platform is used by multiple hospitals. 
+\noindent In a production environment scenario accommodating 100 HCPs and a single dashboard for hospital, upgrading database to the Enterprise Plus Cloud SQL Edition becomes imperative. This entails provisioning a minimum of 8 virtual CPUs, 32 GB of RAM, and increasing storage capacity to over 100 GB. Additionally, as the platform scales to serve multiple hospitals, resource requirements will escalate accordingly.\\
 
-In the production, the middleware microservices will also be deployed on Google Cloud. Middleware queries through the database but to do this query, Middleware needs to send a HTTPS request to cloud using unix-socket with all the permissions needed. 
-
-So if admin adds a new device on the dashboard, it goes through Web Page -> Web Server -> Middleware -> Database (on Google Cloud) and the way back. And all this happens using HTTP requests. When Middleware is also deployed on Google Cloud, the transaction between Middleware and Database will reduce, resulting in faster response time. But to do this, would increase the cost of using Google Cloud. And that's why it was not done.
+\noindent Furthermore, the middleware microservices will be deployed on Google Cloud in the production phase. These services interact with the database through HTTPS requests, utilizing unix-sockets with appropriate permissions. For instance, when an administrator adds a new device via the dashboard, the workflow involves traversing through the web page, web server, middleware, and database (hosted on Google Cloud) before returning. While deploying middleware on Google Cloud can streamline transactions and improve response times, it necessitates additional costs. Hence, this optimization was deferred in the current iteration to maintain cost-effectiveness.
 
 
 \section{Further Work}
 Despite having achieved the core objectives and beyond, there are more enhancements that this project could have done if not for the time constraint and knowledge-specific constraint. Further Work are divided into 3, things to be done to create a minimum viable product, improving current implementations and finally adding new requirements to make VitalMonitor more efficient.
 
 \subsection{Smart Patch: Final Product}
-The final device will be made in such a way that it sits behind the ear - where the pulse sensor will be sticked to the ear lobe and the temperature sensor right behind the ear. This prototype can be further made more smaller in size using more efficient chips which are streamlined only for Smart Patch unlike ESP32S3. 
+The culmination of the Smart Patch project will yield a refined, compact device designed to discreetly rest behind the ear. This final iteration will feature optimized sensor placement, with the pulse sensor delicately positioned on the earlobe and the temperature sensor situated inconspicuously behind the ear. Transitioning from the current breadboard prototype to a fully soldered device will be pivotal, streamlining the product for mass production and enhancing its durability.
 
-The prototype will be changed from being on the breadboard to a fully soldered device. 
+\noindent To achieve this, future efforts will focus on miniaturizing the device through advanced CAD design and employing more efficient microchips tailored specifically for the Smart Patch. However, before deployment, rigorous testing, including Electrical Safety Testing and Mechanical/Physical Testing, will be necessary to ensure compliance with industry standards and user safety. Although these tests were not feasible within the project's constraints, they remain critical future steps to validate the device's reliability and regulatory compliance.
 
-Further research and design will be done to minituarise the device on CAD. 
+% The final device will be made in such a way that it sits behind the ear - where the pulse sensor will be sticked to the ear lobe and the temperature sensor right behind the ear. This prototype can be further made more smaller in size using more efficient chips which are streamlined only for Smart Patch unlike ESP32S3. 
 
-These can be seen in Figure \ref{fig:fig-design}.
+% The prototype will be changed from being on the breadboard to a fully soldered device. 
 
-But to even use it on the person a lot of device testing will be involved such as Electrical Safety Testing, Mechanical/Physical Testing. 
+% Further research and design will be done to minituarise the device on CAD. 
 
-This stage didn't do this because it needs much more Electronics knowledge to conduct such testing and due to time constraints I could have not planned it to finish it in this stage. If given more time, I would have delved into this. 
+% These can be seen in Figure \ref{fig:fig-design}.
+
+% But to even use it on the person a lot of device testing will be involved such as Electrical Safety Testing, Mechanical/Physical Testing. 
+
+% This stage didn't do this because it needs much more Electronics knowledge to conduct such testing and due to time constraints I could have not planned it to finish it in this stage. If given more time, I would have delved into this. 
 
 \subsection{Improving the Middleware Infrastructure}
 Current Middleware Infrastructure is implemented as one single webserver but in a way that can be easily divided into 4 microservices (on 4 different web servers) and they all collectively will be known as Middleware. These 4 microservices shall be: Session Management Service, User and Device Management Service, Data Ingestion Service and Data Retrieval Service. Isolating these services and have dedicated server to only take care of one thing - this would reduce the burden on one single web server. This along with a load balancer to keep a queue of request to these servers would help streamline the data, making sure no data is lost. This would not only provide separation of concerns and manage requests but would really help in terms of scalability of the system. 
