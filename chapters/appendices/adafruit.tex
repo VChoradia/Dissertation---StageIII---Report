@@ -1,0 +1,12 @@
+\chapter{Adafruit IO Dashboard}
+\label{app:adafruit}
+
+Adafruit IO Dashboard was integrated with the system 
+Integration with Adafruit IO is achieved through the MQTT protocol, where the device publishes sensor data to specific feeds. The corresponding dashboard on Adafruit IO is configured to subscribe to these feeds, thereby enabling real-time monitoring of health data.
+
+
+\subsection{Use of MQTT Protocol}
+To handle real-time communication and data transmission from Smart Patches to Adafruit IO Dashboard, MQTT (Message Queuing Telemetry Transport) protocol is used. MQTT is chosen for its lightweight nature and effectiveness in scenarios requiring minimal network bandwidth and device power consumption, which are critical in IoT contexts. Devices publish data to specific topics, which are dynamically subscribed to Adafruit IO Dashboard by the backend, enabling flexible and decoupled communication strategies.
+
+
+--- ADD DIAGRAM FOR MQTT PROTOCOL

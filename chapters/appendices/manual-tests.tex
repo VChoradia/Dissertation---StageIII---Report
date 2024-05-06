@@ -1,0 +1,83 @@
+\chapter{Manual Testing}
+\label{app:manual-testing}
+\begin{longtable}{|c|p{6cm}|p{4cm}|c|}
+\caption{Manual Test Cases for VitalMonitor Web Dashboard} \label{tab:manual_tests_web} \\
+\hline
+\textbf{Test Case ID} & \textbf{Test Details} & \textbf{Expected Results} & \textbf{Pass/Fail} \\
+\hline
+\endfirsthead
+
+\multicolumn{4}{c}%
+{{\bfseries Table \thetable\ Continued from previous page}} \\
+\hline
+\textbf{Test Case ID} & \textbf{Test Details} & \textbf{Expected Results} & \textbf{Pass/Fail} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{4}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+TC-WD01 & Verify that admins can register an organization using valid details. \newline
+- Navigate to registration form. \newline
+- Input all required fields. \newline
+- Submit form. & Admins are taken to home page. & Pass\\
+\hline
+TC-WD02 & Verify admin login functionality with correct credentials. \newline
+- Access login page. \newline
+- Enter valid credentials. \newline
+- Click login. & Admin is redirected to the dashboard home page. & Pass \\
+\hline
+TC-WD03 & Verify the addition of a new device. \newline
+- Log in as admin. \newline
+- Navigate to "Add New Device" page. \newline
+- Enter device details and submit. & Device addition confirmation message is displayed. & Pass \\
+\hline
+TC-WD04 & Verify user-device assignment functionalities. \newline
+- Log in and view user list. \newline
+- Select a user without a device. \newline
+- Assign a device and submit. & Device is listed as assigned to the user. & Pass \\
+\hline
+TC-WD05 & Check the functionality of logging out. \newline
+- Log in to the dashboard. \newline
+- Click the logout button. & User is redirected to the login screen and session ends. & Pass \\
+\hline
+\end{longtable}
+
+\begin{longtable}{|c|p{6cm}|p{4cm}|c|}
+\caption{Manual Test Cases for Smart Patch Device} \label{tab:manual_tests_device} \\
+\hline
+\textbf{Test Case ID} & \textbf{Test Details} & \textbf{Expected Results} & \textbf{Pass/Fail} \\
+\hline
+\endfirsthead
+
+\multicolumn{4}{c}%
+{{\bfseries Table \thetable\ Continued from previous page}} \\
+\hline
+\textbf{Test Case ID} & \textbf{Test Details} & \textbf{Expected Results} & \textbf{Pass/Fail} \\
+\hline
+\endhead
+
+\hline
+\multicolumn{4}{|r|}{{Continued on next page}} \\ \hline
+\endfoot
+
+\hline
+\endlastfoot
+
+TC-SP01 & Verify activation of the Smart Patch by pressing the button. \newline
+- Ensure the device is off. \newline
+- Press the activation button. & Device turns on (red light indicator) and starts transmitting data. & Pass \\
+\hline
+TC-SP02 & Verify deactivation of Smart Patch by pressing the button again. \newline
+- Ensure the device is on. \newline
+- Press the button again. & Device turns off (red light off) and stops transmitting data. & Pass \\
+\hline
+TC-SP03 & Verify continuous data transmission of heart rate and temperature. \newline
+- Activate the device. \newline
+- Monitor the data transmission for 10 minutes. & Continuous, accurate data transmission is observed. & Pass \\
+\hline
+\end{longtable}

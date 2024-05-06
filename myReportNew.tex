@@ -1,0 +1,161 @@
+\documentclass[11pt,oneside]{book}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{setspace}
+\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{xcolor}  % For defining custom colors
+\usepackage{fancyvrb}  % Enhanced verbatim environment
+
+\definecolor{codegray}{gray}{0.95}  % Light gray color for code background
+
+\newenvironment{code}{\VerbatimEnvironment
+\begin{Verbatim}[frame=single, framerule=0pt, fillcolor=codegray, fillcolor=\color{codegray}]}{
+\end{Verbatim}
+}
+
+\usepackage{listings} % Add this in your preamble
+\usepackage{color}    % For syntax highlighting
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\usepackage[
+backend=biber,
+style=ieee,
+sorting=none
+]{biblatex}
+\addbibresource{mybibliography.bib}
+
+
+\usepackage{longtable} % Load the longtable package
+\usepackage{array} % For defining new column types
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\usepackage{pifont}
+\usepackage{newunicodechar}
+\newunicodechar{✓}{\ding{51}}
+\newunicodechar{✗}{\ding{55}}
+ 
+\begin{document}
+
+\frontmatter
+
+\begin{titlepage}
+
+% You need to edit the details here
+
+\begin{center}
+\includegraphics[width=5cm]{images/UOSLogo_Portrait_Violet_RGB.png}\\[2cm]
+\linespread{1.2}\huge {\bfseries VitalMonitor: IoT-driven Healthcare Management and Monitoring System}\\[2cm]
+\linespread{1}
+{\Large Vivek Vijay Choradia}\\[1cm]
+{\large \emph{Supervisor:} Prof. Hamish Cunningham}\\[1cm]
+\large \emph{A report submitted in fulfilment of the requirements}\\ \emph{for the degree of} BSc in Artificial Intelligence and Computer Science\\[0.3cm] 
+\textit{in the}\\[0.3cm]
+Department of Computer Science\\[2cm]
+\today
+\end{center}
+
+\end{titlepage}
+
+% -------------------------------------------------------------------
+% Declaration
+% -------------------------------------------------------------------
+
+\newpage
+\chapter*{\Large Declaration}
+
+\setstretch{1.1} % set the line spacing differently if you wish, but this looks good to me. 
+
+All sentences or passages quoted in this report from other people's work have been specifically acknowledged by clear cross-referencing to author, work and page(s). Any illustrations that are not the work of the author of this report have been used with the explicit permission of the originator and are specifically acknowledged. I understand that failure to do this amounts to plagiarism and will be considered grounds for failure in this project and the degree examination as a whole.\\[1cm]
+
+\noindent Name: Vivek Vijay Choradia\\[1mm]
+\rule[1em]{25em}{0.5pt}
+
+\noindent Signature:\\[1mm]
+\rule[1em]{25em}{0.5pt}
+
+\noindent Date: \today\\[1mm] 
+\rule[1em]{25em}{0.5pt}
+
+% -------------------------------------------------------------------
+% Abstract
+% -------------------------------------------------------------------
+
+\input{chapters/abstract.tex}
+
+\input{chapters/acknowledgement.tex}
+
+% -------------------------------------------------------------------
+% TOC etc
+% -------------------------------------------------------------------
+
+
+\tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+
+\setstretch{1.1} 
+
+\mainmatter
+
+\input{chapters/chapter1.tex}
+\input{chapters/chapter2.tex}
+\input{chapters/chapter3.tex}
+\input{chapters/chapter4.tex}
+\input{chapters/chapter5.tex}
+\input{chapters/chapter6.tex}
+\input{chapters/chapter7.tex}
+% \input{chapters/progress.tex}
+\input{chapters/conclusion.tex}
+% \input{chapters/body-placement.tex}
+
+\printbibliography[heading=bibintoc, title={Bibliography}]
+% \bibliographystyle{ieeetr}
+% \bibliography{mybibliography}
+
+\begin{appendices}
+\input{chapters/appendices/stress-and-fatigue-level}
+\input{chapters/appendices/sdlc}
+\input{chapters/appendices/features}
+\input{chapters/appendices/legal-considerations}
+\input{chapters/appendices/ethical-considerations}
+\input{chapters/appendices/sensors}
+\input{chapters/appendices/software-for-iot}
+\input{chapters/appendices/risk-analysis}
+\input{chapters/appendices/adafruit}
+\input{chapters/appendices/manual-tests}
+\input{chapters/appendices/abrreviations}
+
+\end{appendices}
+
+\end{document}

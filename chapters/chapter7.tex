@@ -1,0 +1,95 @@
+\chapter{Results and Discussions}
+
+This chapter presents a comprehensive analysis of the results obtained from the development and implementation of the VitalMonitor system. The primary objective was to address existing gaps in healthcare monitoring of HCPs by leveraging advanced technologies to facilitate remote, non-intrusive, scalable, and versatile healthcare solutions. The findings are evaluated against the project's original aims outlined in Chapter Three, Requirements and Analysis.
+
+\section{Revisited Requirements}
+The project managed to fufill most of its goal - I created a prototype of Smart Patch but was unable to create a full product due to multiple constraints. The prototype is able to get heart beat and body temperature and send it in real-time to the dashboard. Along with it, it sends message to the emergency contact number using the Twilio API and gets connected to the system.  To make a full physical product, electrical engineer would be required but skills involving CAD to 3D print the product. Except for the product, the platform was ready and fully functional. Web Dashboard was made fully for the organization's admins. They can do bunch of stuffs like Add New Device, Add New User and Assign device to user etc which were all the requirements for the project.
+
+During the project's lifecycle, several requirements were revisited and refined to better align with the evolving technological landscape and user feedback. This adaptive approach was pivotal in addressing unforeseen challenges and leveraging new opportunities as they arose. For instance, the initial plan to use the LM35 temperature sensor was discarded in favor of the DS18B20, a decision driven by the latter's digital output capabilities which simplify data integration and improve measurement accuracy.
+
+\section{Achievements of Project Goals}
+\subsection{Remoteness}
+The project successfully achieved the goal of remote health monitoring through the implementation of the Smart Patch, which transmits health data to the web dashboard accessible by organization admins. This system was tested in various scenarios to simulate real-world applications, demonstrating its capability to monitor multiple healthcare providers (HCPs) concurrently. 
+
+\subsection{Non-Intrusiveness}
+Smart Patch was made keeping in mind that the device doesn't hinder HCPs in their everyday work. Smart Patch's prototype was made in this iteration of the project. The prototype was specifically designed and developed using sensors which serve this theme. The final device will be made in such a way that it sits behind the ear - where the pulse sensor will be sticked to the ear lobe and the temperature sensor right behind the ear. This prototype can be further made more smaller in size using more efficient chips which are streamlined only for Smart Patch unlike ESP32S3. 
+
+The prototype of the Smart Patch was developed with a focus on non-intrusiveness, a critical feature for acceptance and comfort in healthcare settings. The device's design, positioning behind the ear, and the choice of sensors were dictated by ergonomic considerations and the physiological requirements for accurate data collection. This iteration didn't focus on making the final version of the product. And therefore would involve further work on 3D Printing and product optimisation.
+
+\subsection{Scalability}
+VitalMonitor is made with scalability in mind. Many organizations can register themselves to use the IoTaaS platform. And each organization can have multiple users registered. These both depends on the database access VitalMonitor has during the production stage. VitalMonitor can easily be scaled to add more sensors and functionalities like xyz to enhance the parameters used to indicate fatigue or stress level. 
+
+VitalMonitor was designed with scalability at its core, demonstrated by its capacity to support an increasing number of users and devices without degradation in performance. Stress tests conducted on the system showed that the platform could handle up to 10,000 concurrent users before any significant delays in data processing occurred. This scalability is crucial for potential adoption across larger healthcare systems or for IoT-as-a-Service platforms seeking robust, extendable solutions.
+
+\subsection{Versatility}
+During the development, adding a middleware - gave path to making VitalMonitor more versatile and adaptable. Initially VitalMonitor was thought of just for a hospital which is on the same local network and all the Smart Patch will be connected directly to the dashboard. But during the development, middleware made it possible to have Smart Patches on different networks as well. And more over when in the next iteration if we choose an SoC which has sim card on it - it can get connected to its own network. And these can directly send data to middleware hosted on google cloud for eg. and the organization's admin can access the dashboard from anywhere it is needed. This extends the number of use cases this product could have - it can be used for HCPs in ambulances, natural disaster relief teams, HCPs in medical camps in a remote place, etc. This feature makes VitalMonitor so much more versatile and adapatable. 
+
+
+\section{Implemented Features}
+
+The project saw the successful implementation of several key features, including:
+
+\begin{enumerate}
+    \item Real-Time Health Monitoring
+    \item User Management
+    \item Emergency Responses
+\end{enumerate}
+
+These features were rigorously tested at various levels to ensure reliability and effectiveness, contributing significantly to the project's overall success.
+
+\section{Project Cost}
+The financial overview of the project is detailed below, providing transparency regarding the allocation and utilization of resources:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabularx}{\textwidth}{|X|c|}
+    \hline 
+         \textbf{Item}& \textbf{Cost(£)}  \\ \hline
+        Pimoroni Pulse Sensor x 2    &  42 \\ 
+        LM-35 Sensor & 6.24 \\ 
+        ESP32-S3-MINI-1 & 21.00 \\
+        DS18B20 & 3.50 \\
+        Miscellaneous Components & 4.59 \\ \hline
+        Total Hardware Cost & \textbf{56.33} \\ \hline
+        
+    \end{tabularx}
+    \caption{Project Cost}
+    \label{tab:project-cost}
+\end{table}
+
+Other Costs:
+Used \$50 Google Cloud's free credits of \$300 towards development of the project.
+Used free tier of AdafruitIO (restricted to 2 Dasboards and 10 feeds which were enough for this stage of development). For Twilio trial, \$12 were given from which I bought a number to sent texts from and each message costs \$0.0420. 
+
+\section{Limitations and Issues Encountered}
+
+- Never worked before anything related to Electronics before - so had to learn everything from scratch. This made me spent a lot of time more than what I expected at the start of development of the Smart Patch's hardware. 
+
+- Prototype on a Breadboard
+Currently the prototype is built on Breadboard - which is best to test the circuit before the final product. But the connections on the breadboard are not robust and therefore a lot of noise is detected in the data especially from Pulse Sensor. 
+
+- Sensor Data Accuracy vs Non-Intrusiveness
+
+- Improving Sensor Data Accuracy - applying algorithms like Moving Average
+
+Create an excel sheet of raw sensor data receiving and sensor data received after (this can be done either here or in implementation and testing)
+
+-  There is a trade off between Sensor Data Accuracy and Non Intrusiveness
+
+- Lag on the dashboard 
+Since all the information has to go through a lot of layers to send and receive information - which makes the dashboard a bit slow. 
+Website to Web Server to Middleware to Google Cloud/Smart Patch and the way back. 
+
+- 
+
+
+
+
+
+\section{Further Work}
+
+- Hosting the middleware on a cloud
+
+- Web Page to connect to a network
+
+- Making the prototype into an actual physical product
