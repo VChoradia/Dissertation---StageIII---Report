@@ -1,19 +1,25 @@
 \newpage
 
 \chapter{Conclusion}
+% Rise in Stress levels in HCPs
+% Healthcare Professional's wellbeing
+% How IoT and IoTaaS is solving problems in healthcare.
+% No solution out there for tracking HCp's wellbeing
+% Solution: VitalMonitor
+% VitalMonitor being the first solution that caters to HCPs
+% Smart Patch being one of the first IoT device to provide remote and non-intrusive healthcare solution
+% Implementation
+% Evaluation
+% Limitations
+% Future of VitalMonitor
+% Achievements of the project
 
-With the imperative need for healthcare monitoring for healthcare professionals, this project aims to provide a solution where all the HCPs can be monitored non-intrusively and provide a centralized dashboard for the healthcare institutions to monitor the same. For this, the project will delve into two things:
-\begin{itemize}
-    \item \textbf{Development of Smart Patch:} Smart Patch will be an IoT device built on ESP32, sending real-time heart beat rate and body temperature of HCP using Pimoroni Pulse Sensor and LM-35 Sensor, over Wi-Fi to the dashboard; programmed in MicroPython. 
-    \item \textbf{Development of Dashboard:} Dashboard will be a web interface developed in MERN stack technology providing real-time vitals information provided by the Smart Patch to healthcare institutions. 
-\end{itemize}
 
- The project has surveyed the current methodologies, and technology which will be used to build the Smart Patch and the dashboard. \\
-
-\noindent In the next phase of the project, the whole system will be designed, implemented and tested thoroughly and will be evaluated and delivered. Along with this, a few interviews will be conducted with healthcare professionals and healthcare institutions.
-
-
-IoT
-IoTaaS
-IoTaaS model in healthcare
-Healthcare Professional's wellbeing
+The healthcare industry has witnessed a significant rise in stress levels among healthcare professionals (HCPs), highlighting the urgent need to prioritize their well-being. Research reveals that the emotional and physical burdens of high-stress environments can profoundly affect HCPs' mental and physical health. Despite significant technological advancements, existing healthcare systems lack comprehensive tools tailored specifically to safeguard the health and well-being of HCPs. This pressing issue calls for a solution that addresses the critical gaps in real-time monitoring and proactive intervention. This led the development of VitalMonitor.\\ \\
+VitalMonitor was designed as an innovative system which tackles this problem head-on. At its core is the Smart Patch, one of the first IoT devices specifically engineered to remotely monitor the health of HCPs in a non-intrusive manner. This device measures critical health parameters like heart rate and body temperature, providing real-time insights into stress and fatigue levels. Coupled with an Internet of Things as a Service (IoTaaS) platform, VitalMonitor enables centralized monitoring through a comprehensive web dashboard. The dashboard offers a seamless user experience for healthcare administrators to access health data, generate alerts, and make proactive decisions that help ensure HCPs' safety. \\ \\
+A comprehensive literature review revealed the limitations of current healthcare monitoring systems and identified the unique opportunity to fill this void. Existing solutions are primarily focused on patient care and often overlook the well-being of healthcare professionals themselves. This gap prompted the project to develop Smart Patch and web dashboard using an agile methodology. The iterative development process ensured continuous refinement of both the hardware and software components, with thorough testing at each stage.\\ \\
+The design phase involved carefully choosing the most suitable technologies, ensuring compatibility between the Smart Patch firmware, middleware, and dashboard components. The ESP32-S3 microcontroller was selected for its built-in wireless connectivity and low power consumption. It was paired with Pimoroni Pulse Sensor and DS18B20 temperature sensor to achieve accurate, non-intrusive monitoring. The middleware used Google Cloud's secure MySQL infrastructure for efficient data management. Finally, the dashboard was built with Python's Flask framework for robust backend support and easy integration.\\ \\ 
+The Smart Patch's firmware underwent multiple iterations to enhance its accuracy and reliability. The middleware's API endpoints were rigorously tested to ensure secure data transmission between the device and the dashboard. The dashboard's user interface was designed to prioritize ease of use, allowing administrators to seamlessly monitor HCPs' health metrics in real time. The entire system was subject to unit, integration, and system testing, with special attention to user stories that capture essential functionality. \\ \\ 
+VitalMonitor's approach aligns with global health trends, addressing the increasing demand for IoT-based wearable health technology. The system was developed with practical implications in mind, focusing on seamless integration with existing healthcare workflows. This ensures that healthcare organizations can immediately benefit from the system by easily incorporating it into their daily work. \\ \\
+While the Smart Patch and dashboard excelled in achieving real-time health monitoring, certain limitations were identified. The system is dependent on network availability, which may impact performance in low-bandwidth environments. Achieving non-intrusive sensor accuracy remains a challenge, necessitating the use of different algorithms such as Moving Average. However, these challenges also present opportunities for future enhancement. By refining middleware infrastructure, implementing prediction models for stress and fatigue, and improving sensor technology through interdisciplinary collaboration, the system's reliability and usability can be further improved.\\ \\
+VitalMonitor has the potential to become a leading tool in redefining healthcare monitoring systems. Its proactive approach can significantly impact global healthcare delivery by reducing HCP burnout and ensuring patient safety. The project serves as a testament to the innovation and dedication that went into creating this solution, opening the door to future research and collaboration to improve HCP well-being further. Healthcare organizations, researchers, and developers should consider adopting or building upon VitalMonitor to advance healthcare technology that protects those who protect us all. 

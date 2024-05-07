@@ -1,12 +1,28 @@
 \chapter{Adafruit IO Dashboard}
 \label{app:adafruit}
 
-Adafruit IO Dashboard was integrated with the system 
-Integration with Adafruit IO is achieved through the MQTT protocol, where the device publishes sensor data to specific feeds. The corresponding dashboard on Adafruit IO is configured to subscribe to these feeds, thereby enabling real-time monitoring of health data.
+Adafruit IO Dashboard was integrated with the system in order to test and validate the output from the sensors. \\
 
 
-\subsection{Use of MQTT Protocol}
-To handle real-time communication and data transmission from Smart Patches to Adafruit IO Dashboard, MQTT (Message Queuing Telemetry Transport) protocol is used. MQTT is chosen for its lightweight nature and effectiveness in scenarios requiring minimal network bandwidth and device power consumption, which are critical in IoT contexts. Devices publish data to specific topics, which are dynamically subscribed to Adafruit IO Dashboard by the backend, enabling flexible and decoupled communication strategies.
+\noindent Integration with Adafruit IO is achieved through the MQTT protocol, where the device publishes sensor data to specific feeds. The corresponding dashboard on Adafruit IO is configured to subscribe to these feeds, thereby enabling real-time monitoring of health data. \\
+
+\noindent To handle real-time communication and data transmission from Smart Patches to Adafruit IO Dashboard, MQTT (Message Queuing Telemetry Transport) protocol is used. MQTT is chosen for its lightweight nature and effectiveness in scenarios requiring minimal network bandwidth and device power consumption, which are critical in IoT contexts. Devices publish data to specific topics, which are dynamically subscribed to Adafruit IO Dashboard by the backend, enabling flexible and decoupled communication strategies. \\
 
 
---- ADD DIAGRAM FOR MQTT PROTOCOL
+\noindent To configure the Adafruit IO Dashboard, the following steps are followed:
+\begin{enumerate}
+    \item \textbf{Create Feeds:} Feeds are created in Adafruit IO for each type of data that the Smart Patch will publish, such as heart rate and body temperature.
+    \item \textbf{Configure Widgets:} Widgets, such as line charts and gauges, are added to visualize data from specific feeds in the dashboard.
+    \item \textbf{Subscribe to Feeds:} Widgets are configured to subscribe to relevant feeds to ensure real-time data updates.
+    \item \textbf{Assign Alerts:} Alert thresholds are assigned for critical health parameters, providing instant notifications when readings exceed predefined limits.
+\end{enumerate}
+
+
+--- ADD Screenshot of the dashboard
+
+\noindent In conclusion, the integration with Adafruit IO Dashboard provides a seamless way to test real-time health data from Smart Patch. With the lightweight and efficient MQTT protocol this system enabled accurate data transmission.
+
+
+
+
+

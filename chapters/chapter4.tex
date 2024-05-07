@@ -90,7 +90,7 @@ The Pulse Sensor has 3 holes around the outside edge which make it easy to sew i
 One of the main features of the Smart Patch is non-intrusivity. While both the sensors are efficient and used widely, Pulse Sensor comes out as a perfect choice for Smart Patch because not only it is less intrusive but also it works well with ESP32 (Arduino).
 
 \subsubsection{Body Temperature Sensor}
-% To calculate body temperature, thermometers are used normally in healthcare. But thermometers are not digital devices and therefore can’t be connected to the smart patch. Other sensors which are widely used for sensing temperature are thermistors and LM-35 sensors. Thermistors are more temperature-sensitive resistors and not sensors and require a readout circuit, which makes it harder to integrate them seamlessly into Smart Patch. On the other hand, the LM-35 Sensor is a precision IC temperature sensor. It provides a linear voltage vs temperature characteristic making it easier to figure out the temperature. It can operate over a temperature range of \(−55°C to 150°C\) and has an accuracy of \(±1\) degree Celsius. Hence, LM-35 stands out as a clear choice for this project.
+To calculate body temperature, thermometers are used normally in healthcare. But thermometers are not digital devices and therefore can’t be connected to the smart patch. Other sensors which are widely used for sensing temperature are thermistors, LM-35 sensors and DS18B20. Thermistors are more temperature-sensitive resistors and not sensors and require a readout circuit, which makes it harder to integrate them seamlessly into Smart Patch.  \\
 
 \begin{figure}[!h]
     \centering
@@ -98,6 +98,19 @@ One of the main features of the Smart Patch is non-intrusivity. While both the s
     \caption{LM-35 Sensor \cite{ref28}}
     \label{fig:lm-35-sensor}
 \end{figure}
+
+\noindent On the other hand, the LM-35 Sensor is a precision IC temperature sensor. It provides a linear voltage vs temperature characteristic making it easier to figure out the temperature. It can operate over a temperature range of \(−55 ^\circ C\) to \(150 ^\circ C\) and has an accuracy of \(\pm1\) degree Celsius. Additionally, its analog output allows for simple integration with the analog-to-digital converter of the microcontroller used in the Smart Patch. \\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\linewidth]{images/ds18b20.png}
+    \caption{DS18B20 Sensor \cite{51}}
+    \label{fig:ds18b20}
+\end{figure}
+
+\noindent Lastly, the DS18B20 sensor is a digital temperature sensor with a unique 1-wire interface that allows it to communicate efficiently with the Smart Patch's processing unit. It operates in the range of \(-55^\circ C\) to \(125^\circ C\) and boasts an accuracy of \(\pm0.5^\circ C\) over the range of \(-10^\circ C\) to \(85^\circ C\). Additionally, the DS18B20 supports multiple devices on the same bus, enabling the monitoring of multiple sensors using only one microcontroller input. Its digital output makes it immune to noise and interference, providing reliable measurements. \\
+
+\noindent Both the LM-35 and DS18B20 have notable features. The project will test both sensors and retain the one that demonstrates superior accuracy and reliability.
 
 \subsection{Connectivity Technology}
 Connective Technology is nothing but a network of connected “smart” devices that communicate seamlessly over the internet. Wi-Fi, Bluetooth and LoRaWAN are the most used networks associated with IoT. Table \ref{table:connective-technology} provides a comparative study between the three to help in choosing the most suitable technology for the project.\\
@@ -303,7 +316,7 @@ Additionally, a mixture of SQLite (for testing) and MySQL (for production) datab
 \end{enumerate}
 
 \section{Messaging API: Twilio API}
-The Twilio API provides a robust platform for integrating messaging capabilities into IoT Devices. With Twilio, developers can send and receive SMS, MMS, and even WhatsApp messages programmatically, enabling real-time communication with users. Twilio API offers versatile messaging channels, global coverage, developer-friendly API, scalability, reliability, and security. This makes it the ideal choice for integrating seamless and efficient communication capabilities into the web dashboard.
+The Twilio API provides a robust platform for integrating messaging capabilities into IoT Devices. With Twilio, developers can send and receive SMS, MMS, and even WhatsApp messages programmatically, enabling real-time communication with users. Twilio API offers versatile messaging channels, global coverage, developer-friendly API, scalability, reliability, and security. This makes it the ideal choice for integrating seamless and efficient communication capabilities into the web dashboard.\\ \\
 
 \noindent Within the project scope, a thorough examination of potential risks has been undertaken, delineating possible difficulties that might emerge throughout the project’s duration. The risk register will be reviewed regularly throughout the project, allowing for the timely incorporation of newly recognised risks and fostering a proactive approach to risk management.  The primary emphasis of this section is on identifying major potential risks and devising strategies to minimise their effects. \textbf{Appendix F} provides the risk register used for the project.
 
