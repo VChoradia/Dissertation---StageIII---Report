@@ -1,15 +1,20 @@
 \chapter{Results and Discussions}
 
-This chapter presents a comprehensive analysis of the results obtained from the development and implementation of the VitalMonitor. The primary objective was to address existing gaps in healthcare monitoring of HCPs by using IoT and IoTaaS platform to facilitate remote and non-intrusive healthcare solution for HCPs. The findings are evaluated against the project's original aims outlined in Chapter Three, Requirements and Analysis. The final product's demonstration video can be seen \textbf{here - PUT LINK HERE}.
+This chapter presents a comprehensive analysis of the results obtained from the development and implementation of the VitalMonitor. The primary objective was to address existing gaps in healthcare monitoring of HCPs by using IoT and IoTaaS platform to facilitate remote and non-intrusive healthcare solution for HCPs. The findings are evaluated against the project's original aims outlined in Chapter Three, Requirements and Analysis. The final product's demonstration video can be seen \textbf{\href{https://drive.google.com/drive/folders/1X789dsolYtEVA_wNI7RSsXHxpvI9--Kl?usp=sharing}{here}}. This is only accessible by University of Sheffield email address. 
 
 \section{Revisited Requirements}
 This project successfully met the majority of its objectives. A prototype of Smart Patch was created. However, the creation of a fully realized product was impeded by several constraints. The prototype is able to get heart rate and body temperature and transmit it in real-time to the dashboard. Additionally, it features functionality to send alerts to emergency contacts via the Twilio API. While the prototype demonstrates substantial capabilities, the transition to a full-scale product would necessitate expertise in electrical engineering and proficiency in CAD for 3D printing. \\
 
-\noindent Aside from the Smart Patch, the IT infrastructure and web dashbaord of VitalMonitor has been fully implemented and is operational. The web dashboard is designed specifically for organizational administrators, offers comprehensive functionalities including the ability to add and assign devices to users, among other tasks. These features fulfill all stated project requirements. \\
+\noindent Aside from the Smart Patch, the IT infrastructure and web dashboard of VitalMonitor has been fully implemented and is operational. The web dashboard is designed specifically for organizational administrators, offers comprehensive functionalities including the ability to add and assign devices to users, among other tasks. These features fulfill all stated project requirements. \\
 
-\noindent During the project's lifecycle, several requirements were revisited and refined to better align with the evolving technological landscape and user feedback. This adaptive approach was pivotal in addressing unforeseen challenges and leveraging new opportunities as they arose. A notable adjustment was the substitution of the LM35 temperature sensor with the DS18B20 sensor. This change was motivated by the digital output capabilities of the DS18B20, which facilitate easier data integration and enhance the accuracy of measurements.
-
-// ADD THE DIAGRAM - AFTER UPDATING USER STORIES
+\noindent During the project's lifecycle, several requirements were revisited and refined to better align with the evolving technological landscape and user feedback. This adaptive approach was pivotal in addressing unforeseen challenges and leveraging new opportunities as they arose. A notable adjustment was the substitution of the LM35 temperature sensor with the DS18B20 sensor. This change was motivated by the digital output capabilities of the DS18B20, which facilitate easier data integration and enhance the accuracy of measurements. \\
+ 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{images/revisitedr.png}
+    \caption{Overview of Requirements post development}
+    \label{fig:revisited-requirements}
+\end{figure}
 
 \section{Project Cost}
 The funding required to design, implement, and test the entire project was substantial and supported by the Department of Computer Science. Monitoring the expenses associated with the prototype provides insights into potential costs of a fully developed product. Minimizing these costs is critical for promoting adoption by healthcare organizations, potentially alleviating their financial constraints. \\
@@ -80,6 +85,31 @@ The ergonomic design of the device, strategically positioned behind the ear, and
 In developing wearable devices for continuous monitoring, a significant challenge is balancing sensor accuracy with the need for non-intrusiveness, particularly for healthcare professionals (HCPs) who wear these devices during long shifts. High accuracy in sensors is crucial, as it ensures that the data collected is reliable enough to inform meaningful interventions to support HCP well-being. However, achieving this often requires more invasive technologies that may interfere with the daily activities and comfort of these professionals.\\ \\
 VitalMonitor focuses on optimizing this balance by selecting sensors that minimize intrusiveness while still providing sufficiently accurate data for passive monitoring. This approach is critical in settings where both the well-being of HCPs and operational efficiency are prioritized. Given the limited availability of sensors that strike a perfect balance between non-intrusiveness and high accuracy, the selection was guided by the goal of maintaining user comfort and system reliability. This ensures that healthcare administrators can effectively monitor and respond to the health indicators of their staff without causing discomfort or disruption to their work.
 
+\subsection{Settings Get Lost When Power Goes Off}
+The Smart Patch operates by assigning itself to a user through the dashboard. Once the assignment is complete, user data is received by the device. Publishing data only starts when the switch is pressed on the device. However, once the Smart Patch loses power, all assigned data is lost.\\
+
+\noindent To mitigate this issue, the flash memory available in the ESP32 is utilized. EEPROM (Electrically Erasable Programmable Read-Only Memory) is used to save essential data, so the admin does not need to reassign the Smart Patch to a user after power loss. EEPROM is a non-volatile memory technology that retains important data unless the user is deleted or the device is unassigned or switched.\\
+
+\noindent When the device powers on, it first checks for saved information or settings. If data already exists, it will resume publishing data as previously configured. Here is a code snippet illustrating how EEPROM is used in the setup process:
+
+\begin{lstlisting}[language=C++, caption={Using EEPROM in Setup()}, label={EEPROM_in_setup}]
+  if (!EEPROM.begin(512)) { 
+    Serial.println("Failed to initialize EEPROM");
+    return;
+  }
+
+  DeviceSettings settings = loadSettings(); 
+  global_name = settings.name;
+  global_to = settings.phoneNumber;
+  global_bpm_lower_threshold = settings.bpmLowerThreshold;
+  global_bpm_upper_threshold = settings.bpmUpperThreshold;
+  global_temp_lower_threshold = settings.tempLowerThreshold;
+  global_temp_upper_threshold = settings.tempUpperThreshold;
+  global_isPublishing = settings.isPublishing;
+
+\end{lstlisting}
+
+This approach ensures that critical settings stay in the Smart Patch unless explicitly changed.
 
 \subsection{Converting Raw Data to Useful Data}
 

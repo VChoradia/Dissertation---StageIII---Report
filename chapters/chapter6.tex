@@ -184,14 +184,11 @@ Adafruit_MQTT_Publish bpmFeed = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feed
 Adafruit_MQTT_Publish temperatureFeed = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/Temperature");
 \end{lstlisting}
 
-In this setup, the MQTT client is configured with server details and user credentials. Feeds for BPM and temperature data are defined using the username and a specific endpoint path that corresponds to each data type.
+In this setup, the MQTT client is configured with server details and user credentials. Feeds for BPM and temperature data are defined using the username and a specific endpoint path that corresponds to each data type. \\
 
 
 \noindent These code snippets and explanations outline the critical aspects of the MQTT and Adafruit IO integration within the Smart Patch system, demonstrating the implementation of network communication protocols to enhance IoT capabilities.
 
-On the Adafruit IO D- the health-data dashboard looks like:
-
--- ADD IMAGE OF THE DASHBOARD
 
 
 \subsection{Twilio Integration}
@@ -496,7 +493,7 @@ The design of the dashboard prioritizes ease of use and a minimalistic approach 
 The Testing section details the comprehensive strategies and methodologies used to validate the functionality and reliability of VitalMonitor. This encompasses a range of testing techniques from automated unit and integration tests to manual testing, ensuring the system meets all specified requirements.
 
 \subsection {Acceptance Testing}
-Acceptance Testing is important in verifying the system against defined user stories and ensuring that the VitalMonitor functions as intended for end-users. This form of testing is essential for confirming that the system not only functions technically but also fulfills the practical needs of its users. This ensures that the product is ready for deployment and actual use. Each user story is rigorously tested with clear criteria that determine whether the feature is implemented satisfactorily. These tests can be found in the Table \ref{tab:longtable} below.
+Acceptance Testing is important in verifying the system against defined user stories and ensuring that the VitalMonitor functions as intended for end-users. Each user story is rigorously tested with clear criteria that determine whether the feature is implemented satisfactorily. These tests can be found in the Table \ref{tab:longtable} below.
 
 
 \begin{longtable}{|c|p{4cm}|p{5cm}|c|}
@@ -573,11 +570,11 @@ Unit testing for both the middleware and the web dashboard was rigorously conduc
 
 \noindent To avoid impacting the development database, a dedicated local SQLite database was provisioned for the duration of the testing phase. This temporary database was programmatically created prior to each test suite and subsequently destroyed upon completion, ensuring a clean slate for each test run and preventing data persistence that could skew test outcomes.\\
 
-\noindent Furthermore, in order to fully simulate API interactions without actual external API calls, mock responses and requests were meticulously crafted. This allowed for controlled testing of API functionalities and error handling without the need for live network conditions, thereby increasing the reliability of the test outcomes. However, certain interactions, such as data exchanges with other subsystems, could not be effectively simulated within this framework. These scenarios were addressed through targeted manual testing to ensure comprehensive coverage.\\
+\noindent Mock responses and requests were meticulously crafted to simulate API interactions without live network calls, allowing controlled error testing. For cases where API interactions could not be effectively simulated, manual testing provided comprehensive coverage.\\
 
 \noindent Coverage analysis was conducted using the \textit{coverage.py} tool, providing insights into the extent of code executed by the tests and highlighting any areas lacking in test coverage. This analysis was crucial in identifying untested paths and informed subsequent test development to ensure a high degree of code coverage.\\
 
-The results of these efforts are as follows: 
+\noindent The results of these efforts are as follows: 
 \begin{itemize}
     \item The middleware was subjected to 37 unit tests, with the coverage outcomes detailed in Figure \ref{fig:middleware-coverage}.
     \begin{figure}[h!]
